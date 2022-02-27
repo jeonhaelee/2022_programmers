@@ -7,13 +7,17 @@ package Practice_1;
 public class Prac3 {
 	public static boolean solution(int x) {
 		boolean answer = true;
+		
 		String num = Integer.toString(x);
 		String[] num_split = num.split("");
+		
 		int number_sum = 0;
+		
 		for (int i=0; i<num_split.length; i++) {
 			int plus = Integer.parseInt(num_split[i]);
 			number_sum += plus;
 		}
+		
 		if ( x % number_sum == 0) {
 			return answer;		
 		} else {
