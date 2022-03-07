@@ -4,7 +4,6 @@ import java.util.Arrays;
 
 public class prac5 {
 	public static void main(String[] args) {
-
 	}
 }
 
@@ -14,7 +13,7 @@ class Solution {
         int sum = 0;
         Arrays.sort(d);
         for(int i=0; i<d.length; i++) {
-        	if(sum>budget) {
+        	if(sum+d[i]>budget) {
         		break;
         	}
         	sum += d[i];
