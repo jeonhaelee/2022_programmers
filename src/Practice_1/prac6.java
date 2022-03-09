@@ -20,3 +20,4 @@ class Prac6 {
         return answer;
     }
 }
+
