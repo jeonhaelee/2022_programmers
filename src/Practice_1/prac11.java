@@ -2,7 +2,7 @@ package Practice_1;
 
 public class prac11 {
 	public static void main(String[] args) {
-		String new_id = "123_.def";
+		String new_id = "=.=";
 		String answer = "";
 		
 		
@@ -64,43 +64,34 @@ public class prac11 {
 		
 		
 //		5단계 new_id가 빈 문자열이라면, new_id에 "a"를 대입합니다.
-		if (answer3 == "") {
+		
+		if (answer3.equals("")) {
 			answer3 += "a";
 		}
 		
-//		6단계 new_id의 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거합니다.
-		String answer4 = "";
-		if(answer3.length()>=16) {
-			for(int i=0; i<15; i++) {
-				answer4 += answer3.charAt(i);
-			}
-		}else {
-			answer4 = answer3;
-		}
+//		if (answer3.length()==0) {
+//			answer3 += "a";
+//		}
 		
+//		6단계 new_id의 길이가 16자 이상이면, new_id의 첫 15개의 문자를 제외한 나머지 문자들을 모두 제거합니다.
+		if(answer3.length()>=16) {
+			answer3 = answer3.substring(0, 15);
+		} 
 		
 //	    만약 제거 후 마침표(.)가 new_id의 끝에 위치한다면 끝에 위치한 마침표(.) 문자를 제거합니다.
-		String answer5 = "";
-		for (int i = 0; i < answer4.length()-1; i++) {
-			answer5 += answer4.charAt(i);
+		if(answer3.endsWith(".")) {
+			answer3 = answer3.substring(0, answer3.length()-1);
 		}
-		
-		if(answer4.charAt(answer4.length()-1)=='.') {
-			answer5 += "";
-		}else {
-			answer5 += answer4.charAt(answer4.length()-1);
-		}
-		
 		
 		
 //		7단계 new_id의 길이가 2자 이하라면, new_id의 마지막 문자를 new_id의 길이가 3이 될 때까지 반복해서 끝에 붙입니다.
-		if(answer5.length()==2) {
-			answer5 += answer5.charAt(answer5.length()-1);
-		}else if(answer5.length()==1) {
-			answer5 += answer5.charAt(answer5.length()-1);
-			answer5 += answer5.charAt(answer5.length()-1);
+		String plus = answer3.charAt(answer3.length()-1) + "";
+		if(answer3.length()==2) {
+			answer3 += plus;
+		}else if(answer3.length()==1) {
+			answer3 = answer3 + plus + plus;
 		}
 			
-		System.out.println(answer5);
+		System.out.println(answer3);
 	}
 }
